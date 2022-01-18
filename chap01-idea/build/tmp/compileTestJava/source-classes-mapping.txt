@@ -2,3 +2,7 @@ chap01/CalculatorTest.java
  chap01.CalculatorTest
 chap01/PasswordStrengthMeterTest.java
  chap01.PasswordStrengthMeterTest
+chap03/ExpiryDateCalculator.java
+ chap03.ExpiryDateCalculator
+chap03/ExpiryDateCalculatorTest.java
+ chap03.ExpiryDateCalculatorTest
