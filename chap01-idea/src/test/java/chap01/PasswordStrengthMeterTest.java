@@ -49,6 +49,11 @@ public class PasswordStrengthMeterTest {
     }
 
     @Test
+    void meetsNoCriteria_Then_Weak() {
+        assertStrength("abc", PasswordStrength.WEAK);
+    }
+
+    @Test
     void nullInput_Then_Invalid() {
         assertStrength(null, PasswordStrength.INVALID);
     }

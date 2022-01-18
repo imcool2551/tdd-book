@@ -1,2 +1,6 @@
 chap01/Caculator.java
  chap01.Caculator
+chap01/PasswordStrengthMeter.java
+ chap01.PasswordStrengthMeter
+chap01/PasswordStrength.java
+ chap01.PasswordStrength

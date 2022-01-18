@@ -3,26 +3,20 @@ package chap01;
 public class PasswordStrengthMeter {
     public PasswordStrength meter(String s) {
         if (s == null || s.isEmpty()) return PasswordStrength.INVALID;
-        boolean lengthEnough = s.length() >= 8;
-        boolean containsNum = meetsContainingNumberCriteria(s);
-        boolean containsUpp = meetsContainingUppercaseCriteria(s);
+        int metCounts = getMetCriteriaCounts(s);
 
-        if (lengthEnough && !containsNum && !containsUpp) {
-            return PasswordStrength.WEAK;
-        }
-        if (!lengthEnough && containsNum && !containsUpp) {
-            return PasswordStrength.WEAK;
-        }
-        if (!lengthEnough && !containsNum && containsUpp) {
-            return PasswordStrength.WEAK;
-        }
+        if (metCounts <= 1) return PasswordStrength.WEAK;
+        if (metCounts == 2) return PasswordStrength.NORMAL;
 
-        if (!lengthEnough) {
-            return PasswordStrength.NORMAL;
-        }
-        if (!containsNum) return PasswordStrength.NORMAL;
-        if (!containsUpp) return PasswordStrength.NORMAL;
         return PasswordStrength.STRONG;
+    }
+
+    private int getMetCriteriaCounts(String s) {
+        int metCounts = 0;
+        if (s.length() >= 8) metCounts++;
+        if (meetsContainingNumberCriteria(s)) metCounts++;
+        if (meetsContainingUppercaseCriteria(s)) metCounts++;
+        return metCounts;
     }
 
     private boolean meetsContainingNumberCriteria(String s) {
