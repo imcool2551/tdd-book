@@ -12,3 +12,7 @@ chap05/LifeCycleTest.java
  chap05.LifeCycleTest
 chap05/DisplayNameTest.java
  chap05.DisplayNameTest
+chap06/MathUtils.java
+ chap06.MathUtils
+chap06/MathUtilTest.java
+ chap06.MathUtilTest
