@@ -149,6 +149,14 @@ public class ExpiryDateCalculatorTest {
                         .build(),
                 LocalDate.of(2021, 4, 30)
         );
+
+        assertExpiryDate(
+                PayData.builder()
+                        .billingDate(LocalDate.of(2020, 1, 31))
+                        .payAmount(210_000)
+                        .build(),
+                LocalDate.of(2022, 2, 28)
+        );
     }
 
     private void assertExpiryDate(
